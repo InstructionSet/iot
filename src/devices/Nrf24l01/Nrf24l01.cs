@@ -571,6 +571,17 @@ namespace Iot.Device.Nrf24l01
         /// Read nRF24L01 Power Mode
         /// </summary>
         /// <returns>Power Mode</returns>
+        public CRCScheme ReadCRCScheme()
+        {
+            Span<byte> readData = WriteRead(Command.NRF_R_REGISTER, Register.NRF_CONFIG, 1);
+
+            return (CRCScheme)((readData[0] >> ((int)BV.EN_CRC)) & 0b_0000_0001);
+        }
+
+        /// <summary>
+        /// Read nRF24L01 Power Mode
+        /// </summary>
+        /// <returns>Power Mode</returns>
         internal PowerMode ReadPowerMode()
         {
             // Details in the Datasheet P53

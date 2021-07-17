@@ -3,6 +3,58 @@
 
 namespace Iot.Device.Nrf24l01
 {
+    internal enum BV : int
+    {
+        /* Bit Mnemonics */
+        MASK_RX_DR = 6,
+        MASK_TX_DS = 5,
+        MASK_MAX_RT = 4,
+        EN_CRC = 3,
+        CRCO = 2,
+        PWR_UP = 1,
+        PRIM_RX = 0,
+        ENAA_P5 = 5,
+        ENAA_P4 = 4,
+        ENAA_P3 = 3,
+        ENAA_P2 = 2,
+        ENAA_P1 = 1,
+        ENAA_P0 = 0,
+        ERX_P5 = 5,
+        ERX_P4 = 4,
+        ERX_P3 = 3,
+        ERX_P2 = 2,
+        ERX_P1 = 1,
+        ERX_P0 = 0,
+        AW = 0,
+        ARD = 4,
+        ARC = 0,
+        PLL_LOCK = 4,
+        CONT_WAVE = 7,
+        RF_DR = 3,
+        RF_PWR = 6,
+        RX_DR = 6,
+        TX_DS = 5,
+        MAX_RT = 4,
+        RX_P_NO = 1,
+        TX_FULL = 0,
+        PLOS_CNT = 4,
+        ARC_CNT = 0,
+        TX_REUSE = 6,
+        FIFO_FULL = 5,
+        TX_EMPTY = 4,
+        RX_FULL = 1,
+        RX_EMPTY = 0,
+        DPL_P5 = 5,
+        DPL_P4 = 4,
+        DPL_P3 = 3,
+        DPL_P2 = 2,
+        DPL_P1 = 1,
+        DPL_P0 = 0,
+        EN_DPL = 2,
+        EN_ACK_PAY = 1,
+        EN_DYN_ACK = 0
+    }
+
     internal enum Register : byte
     {
         NRF_CONFIG = 0x00,
@@ -30,5 +82,6 @@ namespace Iot.Device.Nrf24l01
         NRF_RX_PW_P5 = 0x16,
         NRF_FIFO_STATUS = 0x17,
         NRF_NOOP = 0x00,
+        NRF_FEATURE = 0x1D
     }
 }
